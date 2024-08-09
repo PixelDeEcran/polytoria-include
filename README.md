@@ -18,6 +18,8 @@ pipx install .
 polytoria-include <source> <out>
 ```
 
+The script will watch for any changes, and reassemble the lua file whenever this happens.
+
 To include a file, use
 ```
 ---#include <path>
