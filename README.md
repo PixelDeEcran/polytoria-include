@@ -1,6 +1,6 @@
 # Polytoria-Include
 
-This is a very basic CLI to merge multiple lua files in one.
+This is a very basic CLI to merge multiple lua files into one.
 
 # Installation
 
