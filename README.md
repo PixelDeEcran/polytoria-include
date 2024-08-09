@@ -30,16 +30,16 @@ For instance, let's say I have the following file tree:
 ```
 myproject
  |- server
-     |- PlayerData.lua
-
+ |   |- PlayerData.lua
+ |
  |- client
-     |- CarController.lua
-     |- CarRenderer.lua
- 
+ |   |- CarController.lua
+ |   |- CarRenderer.lua
+ |   
  |- shared
-     |- Globals.lua
-     |- Settings.lua
- 
+ |   |- Globals.lua
+ |   |- Settings.lua
+ |
  |- Client.client.lua
  |- Server.server.lua
 ```
