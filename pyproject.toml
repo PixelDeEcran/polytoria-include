@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "polytoria-include"
+version = "0.1.0"
+description = ""
+authors = ["PixelDeEcran"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+typer = {extras = ["all"], version = "^0.12.3"}
+watchdog = "^4.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+polytoria-include = "polytoria_include.main:app"
