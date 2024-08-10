@@ -17,11 +17,10 @@ def include(dir: Path, path: Path, including: Set[Path], already_included: Set[P
         print("(X) Could not open/read file:", path)
         return None
 
-
     skip_line = False
     for line in content.splitlines():
         if not skip_line:
-            if line.startswith("---#include "):
+            if line.lstrip().startswith("---#include "):
                 other = dir / line[12:]
 
                 if other in including:
@@ -35,12 +34,12 @@ def include(dir: Path, path: Path, including: Set[Path], already_included: Set[P
                         result = result + other_result + "\n"
                     else:
                         return None
-            elif (is_client and line.startswith("---#if server then")) or (not is_client and line.startswith("---#if client then")):
+            elif (is_client and line.lstrip().startswith("---#if server then")) or (not is_client and line.lstrip().startswith("---#if client then")):
                 skip_line = True
-            elif not line.startswith("---#if server then") and not line.startswith("---#if client then") and not line.startswith("---#end"):
+            elif not line.lstrip().startswith("---#if server then") and not line.lstrip().startswith("---#if client then") and not line.lstrip().startswith("---#end"):
                 result = result + line + "\n"
         else:
-            if line.startswith("---#end"):
+            if line.lstrip().startswith("---#end"):
                 skip_line = False
 
     including.remove(path)
